@@ -1,0 +1,54 @@
+<h1>Create New Account</h1>
+<%= form_with model: @user do |form| %>
+  <div>
+    <%= form.label :first_name %>
+    <%= form.text_field :first_name %>
+    <% @user.errors.full_messages_for(:first_name).each do |message| %>
+      <div><%= message %></div>
+    <% end %>
+  </div>
+
+  <div style="padding-top: 7px;">
+    <%= form.label :last_name %>
+    <%= form.text_field :last_name %>
+    <% @user.errors.full_messages_for(:last_name).each do |message| %>
+      <div><%= message %></div>
+    <% end %>
+  </div>
+
+   <div style="padding-top: 7px;">
+    <%= form.label :email %>
+    <%= form.email_field :email %>
+    <% @user.errors.full_messages_for(:email).each do |message| %>
+      <div><%= message %></div>
+    <% end %>
+  </div>
+
+   <div style="padding-top: 7px;">
+    <%= form.label :username %>
+    <%= form.text_field :username %>
+    <% @user.errors.full_messages_for(:email).each do |message| %>
+      <div><%= message %></div>
+    <% end %>
+  </div>
+
+  <div style="padding-top: 7px;">  
+    <%= form.label :password %>
+    <%= form.password_field :password %>
+    <% @user.errors.full_messages_for(:password).each do |message| %>
+      <div><%= message %></div>
+    <% end %>
+  </div>
+
+  <div style="padding-top: 7px;">
+    <%= form.label :password_confirmation %>
+    <%= form.password_field :password_confirmation %>
+    <% @user.errors.full_messages_for(:password_confirmation).each do |message| %>
+      <div><%= message %></div>
+    <% end %>
+  </div>
+
+  <div style="padding-top: 7px;">
+    <%= form.submit %>
+  </div>
+<% end %>
