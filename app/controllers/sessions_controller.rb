@@ -10,7 +10,7 @@ class SessionsController < ApplicationController
   
       redirect_to "/profile"
     else
-      redirect_to "/login"
+      render json: {message: "Incorrect email or password. Try again"}
     end
   end
 
