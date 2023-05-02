@@ -9,4 +9,11 @@ Rails.application.routes.draw do
   get "/login" => "sessions#new"
   post "/sessions" => "sessions#create"
   get "/logout" => "sessions#destroy"
+
+  # Profile routes
+
+  get "/profile" => "profiles#show"
+  get "/profile/edit" => "profiles#edit"
+  patch "/profile" => "profiles#update"
+
 end
