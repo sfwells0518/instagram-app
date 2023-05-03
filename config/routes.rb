@@ -12,8 +12,11 @@ Rails.application.routes.draw do
 
   # Profile routes
 
+  
   get "/profile" => "profiles#show"
+  get "/profile/new" => "profiles#new"
   get "/profile/edit" => "profiles#edit"
+  post "/profile/create" => "profiles#create"
   patch "/profile" => "profiles#update"
 
 end

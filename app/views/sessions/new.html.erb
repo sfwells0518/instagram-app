@@ -1,22 +1,57 @@
-<div class="signup-header">
-  <h1 class="app-logo">InstaClone</h1>
+<div class="login-container">
+  <div style="padding-top: 10px;">
+    <h4>Welcome to InstaClone</h4>
+  </div>
 
-  <p class="subheading">Welcome back!</p>
+  <%= form_with method: "post", url: "/sessions", local: true do |form| %>
+
+  <div class="form-floating mb-2">
+    <input type="email" class="form-control" id="floatingInput" name="email" placeholder="name@example.com">
+    <label for="floatingInput">Email address</label>
+  </div>
+  
+  <div class="form-floating mb-2">
+    <input type="password" class="form-control" id="floatingPassword" name="password" placeholder="Password">
+    <label for="floatingPassword">Password</label>
+  </div>
+
+  <div style="padding-top: 15px; text-align: center;">
+    <%= form.submit "Log In", class: "blue-button" %>
+  </div>
+
+  <% end %>
 </div>
 
-<%= form_with method: "post", url: "/sessions" do |form| %>
-  
-  <div>
-    <%= form.label :email %>
-    <%= form.email_field :email %>
-  </div>
-  
-  <div style="padding-top: 7px;">
-    <%= form.label :password %>
-    <%= form.password_field :password %>
-  </div>
-  
-  <div style="padding-top: 7px;">
-    <%= form.submit "Login" %>
-  </div>
-<% end%>
+<style>
+  .login-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    margin-top: 50px;
+  }
+
+  .form-group{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+  }
+
+  .blue-button {
+    background-color: blue;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    border-radius: 85px;
+    width: 150px;
+    
+  }
+
+  .blue-button:hover {
+    background-color: darkblue;
+  }
+</style>
