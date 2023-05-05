@@ -12,11 +12,14 @@ Rails.application.routes.draw do
 
   # Profile routes
 
+  # get "/profiles" => "profiles#index"
+  get "/profiles" => "profiles#show"
   
-  get "/profile" => "profiles#show"
-  get "/profile/new" => "profiles#new"
-  get "/profile/edit" => "profiles#edit"
-  post "/profile/create" => "profiles#create"
-  patch "/profile" => "profiles#update"
+  get "/profiles/new" => "profiles#new"
+  post "/profiles" => "profiles#create"
+  
+  get "/profiles/edit" => "profiles#edit", as: "edit_profile"
+
+  patch "/profiles" => "profiles#update"
 
 end

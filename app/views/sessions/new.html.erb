@@ -1,34 +1,49 @@
-<div class="login-container">
-  <div style="padding-top: 10px;">
-    <h4>Welcome to InstaClone</h4>
-  </div>
+<div class="page-container">
+  <div class="login-container">
+    <div style="padding-top: 10px" >
+    <h4>Welcome back</h4>
+    </div>
 
-  <%= form_with method: "post", url: "/sessions", local: true do |form| %>
+    <%= form_with method: "post", url: "/sessions", local: true do |form| %>
 
-  <div class="form-floating mb-2">
-    <input type="email" class="form-control" id="floatingInput" name="email" placeholder="name@example.com">
-    <label for="floatingInput">Email address</label>
-  </div>
+    <div class="form-floating mb-2" style="padding-top: 10px">
+      <input type="email" class="form-control" id="floatingInput" name="email" placeholder="name@example.com">
+      <label for="floatingInput">Email address</label>
+    </div>
   
-  <div class="form-floating mb-2">
-    <input type="password" class="form-control" id="floatingPassword" name="password" placeholder="Password">
-    <label for="floatingPassword">Password</label>
-  </div>
+    <div class="form-floating mb-2">
+      <input type="password" class="form-control" id="floatingPassword" name="password" placeholder="Password">
+      <label for="floatingPassword">Password</label>
+    </div>
 
-  <div style="padding-top: 15px; text-align: center;">
-    <%= form.submit "Log In", class: "blue-button" %>
-  </div>
-
+    <div style="padding-top: 15px; text-align: center;">
+      <%= form.submit "Log In", class: "red-button" %>
+    </div>
   <% end %>
+  </div>
 </div>
 
 <style>
+
+  .page-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    margin-top: 5px;
+  }
+
   .login-container {
     display: flex;
     flex-direction: column;
     align-items: center;
     width: 100%;
-    margin-top: 50px;
+    max-width: 400px;
+    margin-top: 25px;
+    border: 2px solid #999; /* Add border */
+    padding: 20px; /* Add padding */
+    border-radius: 10px; /* Add rounded corners */
   }
 
   .form-group{
@@ -38,20 +53,24 @@
     width: 100%;
   }
 
-  .blue-button {
-    background-color: blue;
+  .form-control {
+    text-align: center;
+  }
+
+  .red-button {
+    background-color: rgb(255, 90, 95);
     color: white;
     border: none;
     padding: 10px 20px;
     font-size: 1em;
     cursor: pointer;
     transition: background-color 0.3s;
-    border-radius: 85px;
-    width: 150px;
+    border-radius: 5px;
+    width: 135px;
     
   }
 
-  .blue-button:hover {
-    background-color: darkblue;
+  .red-button:hover {
+    background-color: darkred;
   }
 </style>

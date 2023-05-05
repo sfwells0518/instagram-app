@@ -8,7 +8,7 @@ class SessionsController < ApplicationController
     if user && user.authenticate(params[:password])
       session[:user_id] = user.id
   
-      redirect_to "/profile"
+      redirect_to "/profiles"
     else
       render json: {message: "Incorrect email or password. Try again"}
     end

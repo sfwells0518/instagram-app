@@ -1,4 +1,5 @@
-<%= form_with(model: current_user, local: true) do |form| %>
+<%= form_with(model: @profile, url: profiles_path, method: :patch, local: true) do |form| %>
+  <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
   <%= form.label :profile_picture %>
   <%= form.text_field :profile_picture %>
 
@@ -7,3 +8,4 @@
 
   <%= form.submit "Save Changes", class: "btn btn-primary" %>
 <% end %>
+
