@@ -21,7 +21,7 @@
 
 <div class="container mt-4">
   <div class="row">
-    <% Post.all.each do |post| %>
+    <% @posts.order(created_at: :desc).each do |post| %>
       <div class="col-md-4 col-sm-6 mb-4">
         <a href="/posts/<%= post.id %>">
           <div class="card square-card">
@@ -34,8 +34,6 @@
     <% end %>
   </div>
 </div>
-
-
 
 
 <style>
