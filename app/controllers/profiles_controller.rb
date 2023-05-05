@@ -10,7 +10,8 @@ class ProfilesController < ApplicationController
 
   def show
     @profile = Profile.find_by(user_id: current_user.id)
-    render :show
+    @posts = current_user.posts.order(created_at: :desc)
+    @post = Post.new
   end 
 
   def new
@@ -35,7 +36,8 @@ class ProfilesController < ApplicationController
   def update
     @profile = Profile.find_by(user_id: current_user.id)
     if @profile.update(profile_params)
-      redirect_to profiles_path
+      @profile.save!
+      redirect_to "/profiles"
     else
       render :edit
     end

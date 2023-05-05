@@ -1,0 +1,9 @@
+<%= form_with model: @post, url: "/posts", method: :post do |form| %>
+  <%= form.label :post_image %>
+  <%= form.text_field :post_image %>
+  
+  <%= form.label :caption %>
+  <%= form.text_field :caption %>
+
+  <%= form.submit "Create Post" %>
+<% end %>
